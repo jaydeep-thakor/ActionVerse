@@ -1,8 +1,20 @@
 import React from 'react'
+import Home from './pages/Home'
+import Header from './components/layout/Header'
 
 const App = () => {
   return (
-    <div className='bg-red-500'>App</div>
+    
+    <>
+    
+      <Header/>
+
+      <Home/>
+
+      
+
+    </>
+
   )
 }
 
