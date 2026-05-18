@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @import "tailwindcss";
 
@@ -62,14 +63,15 @@
   --color-primary-light: #F56A6F;
 }
 
-html{
-      scrollbar-color: red #111;
+/* html{
+	scrollbar-color: red #111;
     scrollbar-gutter: stable;
     scrollbar-width: thin;
-}
+} */
 
 body {
-	font-family: 'Poppins', sans-serif;
+	/* font-family: 'Poppins', sans-serif; */
+	font-family: "Barlow", sans-serif;
 }
 
 .font-marvel {
@@ -82,5 +84,14 @@ button{
 
 .bg-primary {
     background-color: var(--color-primary);
+}
+
+.bg-primary-hover {
+    background-color: var(--color-primary-hover);
+}
+
+.container{
+	max-width: 1400px;
+	margin: auto;
 }
 
