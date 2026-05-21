@@ -70,7 +70,10 @@
 } */
 
 body {
-	/* font-family: 'Poppins', sans-serif; */
+	font-family: 'Poppins', sans-serif;
+}
+
+header{
 	font-family: "Barlow", sans-serif;
 }
 

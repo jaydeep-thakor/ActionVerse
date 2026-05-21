@@ -1,9 +1,13 @@
 import { MapPin, Search } from 'lucide-react'
 import React from 'react'
+import { useAuthModal } from '../../context/AuthModalContext'
 
 const Header = () => {
+
+    const {openAuthModal} = useAuthModal();
+
     return (
-        <div className='flex w-full items-center px-7 py-4 bg-black justify-between'>
+        <header className='flex w-full items-center px-7 py-4 bg-black justify-between relative z-1'>
 
             <div className='flex gap-7 items-center'>
                 <div className="flex items-center space-x-1 cursor-pointer max-md:justify-center">
@@ -52,11 +56,11 @@ const Header = () => {
                     <Search size={18} color='white' />
                 </div>
 
-                <button className='bg-primary text-white font-semibold text-sm px-3 py-1.5 rounded-sm hover:bg-primary-hover'>Book Now</button>
+                <button onClick={openAuthModal} className='bg-primary text-white font-semibold text-sm px-3 py-1.5 rounded-sm hover:bg-primary-hover'>Book Now</button>
 
             </div>
 
-        </div>
+        </header>
     )
 }
 
