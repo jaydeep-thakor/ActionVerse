@@ -70,10 +70,10 @@ const signUp = async (req, res) => {
 const signIn = async (req, res) => {
 
     try {
-        
+
         const { email, password } = req.body;
 
-        if(!email || !password){
+        if (!email || !password) {
             return res.status(400).json({
                 message: "All fields are required"
             })
@@ -81,12 +81,12 @@ const signIn = async (req, res) => {
 
         const user = await userModel.findOne({
             $or: [
-                {email: email},
-                {password: password}
+                { email: email },
+                { password: password }
             ]
         })
 
-        if(!user){
+        if (!user) {
             return res.status(404).json({
                 message: "User does not exists"
             })
@@ -94,7 +94,7 @@ const signIn = async (req, res) => {
 
         const decodedPassword = await bcrypt.compare(password, user.password);
 
-        if(!decodedPassword){
+        if (!decodedPassword) {
             return res.status(401).json({
                 message: "Invalid credentials"
             })
@@ -127,5 +127,27 @@ const signIn = async (req, res) => {
     }
 }
 
-export { signUp, signIn };
+const signOut = async (req, res) => {
+
+    try{
+
+        res.clearCookie("userToken");
+
+        return res.status(200).json({
+            message: "Logout successfully"
+        })
+
+    }catch(error){
+
+        console.log("error", error);
+
+        return res.status(500).json({
+            message: "Internal server error"
+        })
+
+    }
+
+}
+
+export { signUp, signIn, signOut };
 
