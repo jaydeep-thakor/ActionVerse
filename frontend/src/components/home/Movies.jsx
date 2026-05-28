@@ -1,7 +1,7 @@
 import React from 'react'
 import Title from '../Title'
 import img from "../../assets/images/poster.jpg"
-import useNavigate from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Movies = () => {
 

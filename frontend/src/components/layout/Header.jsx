@@ -1,16 +1,21 @@
 import { MapPin, Search } from 'lucide-react'
 import React from 'react'
 import { useAuthModal } from '../../context/AuthModalContext'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
 
-    const {openAuthModal} = useAuthModal();
+    const navigate = useNavigate();
+
+    const { openAuthModal } = useAuthModal();
 
     return (
         <header className='flex w-full items-center px-7 py-4 bg-black justify-between relative z-1'>
 
             <div className='flex gap-7 items-center'>
-                <div className="flex items-center space-x-1 cursor-pointer max-md:justify-center">
+                <div onClick={() => {
+                    navigate("/");
+                }} className="flex items-center space-x-1 cursor-pointer max-md:justify-center">
                     <div className="">
                         <span className="text-white text-xl sm:text-2xl font-extrabold tracking-wide uppercase font-marvel bg-primary pt-0.5 px-1">action</span>
                     </div>
@@ -40,7 +45,7 @@ const Header = () => {
                         return (
                             <li
                                 key={index}
-                                className={`relative text-sm font-medium text-white cursor-pointer
+                                className={`tracking-wider relative text-sm font-normal text-white cursor-pointer
           after:content-[''] after:absolute after:-bottom-1 after:left-1/2
           after:-translate-x-1/2 after:w-5 after:h-0.5 after:rounded-sm
           after:bg-[#c0170e] after:transition-opacity

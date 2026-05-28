@@ -4,15 +4,13 @@ import { createContext, useContext, useState } from 'react'
 const AuthModalContext = createContext();
 
 export const AuthModalProvider = ({ children }) => {
-    const [isAuthModalOpen, setIsAuthModalOpen] = useState(true);
+    const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
     const openAuthModal = () => {
-        alert("open auth modal");
         setIsAuthModalOpen(true);
     }
 
     const closeAuthModal = () => {
-        alert("close auth");
         setIsAuthModalOpen(false);
     }
 
